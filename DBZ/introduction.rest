@@ -1,0 +1,828 @@
+Initialisation Sphinx
+
+sfr94@sfr94-desktop:~/Bureau/dbz$ git branch
+  master
+* sphinx
+
+sfr94@sfr94-desktop:~/Bureau/dbz$ virtualenv --setuptools .
+New python executable in ./bin/python
+Installing setuptools...........................done.
+sfr94@sfr94-desktop:~/Bureau/dbz$ git status
+# On branch sphinx
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	bin/
+#	include/
+#	lib/python2.6/
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+sfr94@sfr94-desktop:~/Bureau/dbz$ tree bin
+bin
+|-- activate
+|-- activate_this.py
+|-- easy_install
+|-- easy_install-2.6
+`-- python
+
+0 directories, 5 files
+sfr94@sfr94-desktop:~/Bureau/dbz$ tree lib
+lib
+|-- python2.6
+|   |-- _abcoll.py -> /usr/lib/python2.6/_abcoll.py
+|   |-- _abcoll.pyc -> /usr/lib/python2.6/_abcoll.pyc
+|   |-- abc.py -> /usr/lib/python2.6/abc.py
+|   |-- abc.pyc -> /usr/lib/python2.6/abc.pyc
+|   |-- codecs.py -> /usr/lib/python2.6/codecs.py
+|   |-- codecs.pyc -> /usr/lib/python2.6/codecs.pyc
+|   |-- config -> /usr/lib/python2.6/config
+|   |-- copy_reg.py -> /usr/lib/python2.6/copy_reg.py
+|   |-- copy_reg.pyc -> /usr/lib/python2.6/copy_reg.pyc
+|   |-- distutils
+|   |   |-- distutils.cfg
+|   |   |-- __init__.py
+|   |   `-- __init__.pyc
+|   |-- encodings -> /usr/lib/python2.6/encodings
+|   |-- fnmatch.py -> /usr/lib/python2.6/fnmatch.py
+|   |-- fnmatch.pyc -> /usr/lib/python2.6/fnmatch.pyc
+|   |-- genericpath.py -> /usr/lib/python2.6/genericpath.py
+|   |-- genericpath.pyc -> /usr/lib/python2.6/genericpath.pyc
+|   |-- lib-dynload -> /usr/lib/python2.6/lib-dynload
+|   |-- linecache.py -> /usr/lib/python2.6/linecache.py
+|   |-- linecache.pyc -> /usr/lib/python2.6/linecache.pyc
+|   |-- locale.py -> /usr/lib/python2.6/locale.py
+|   |-- locale.pyc -> /usr/lib/python2.6/locale.pyc
+|   |-- ntpath.py -> /usr/lib/python2.6/ntpath.py
+|   |-- ntpath.pyc -> /usr/lib/python2.6/ntpath.pyc
+|   |-- orig-prefix.txt
+|   |-- os.py -> /usr/lib/python2.6/os.py
+|   |-- os.pyc -> /usr/lib/python2.6/os.pyc
+|   |-- posixpath.py -> /usr/lib/python2.6/posixpath.py
+|   |-- posixpath.pyc -> /usr/lib/python2.6/posixpath.pyc
+|   |-- re.py -> /usr/lib/python2.6/re.py
+|   |-- re.pyc -> /usr/lib/python2.6/re.pyc
+|   |-- site-packages
+|   |   |-- distribute-0.6.14-py2.6.egg
+|   |   |   |-- easy_install.py
+|   |   |   |-- easy_install.pyc
+|   |   |   |-- EGG-INFO
+|   |   |   |   |-- dependency_links.txt
+|   |   |   |   |-- entry_points.txt
+|   |   |   |   |-- PKG-INFO
+|   |   |   |   |-- SOURCES.txt
+|   |   |   |   |-- top_level.txt
+|   |   |   |   `-- zip-safe
+|   |   |   |-- pkg_resources.py
+|   |   |   |-- pkg_resources.pyc
+|   |   |   |-- setuptools
+|   |   |   |   |-- archive_util.py
+|   |   |   |   |-- archive_util.pyc
+|   |   |   |   |-- cli.exe
+|   |   |   |   |-- command
+|   |   |   |   |   |-- alias.py
+|   |   |   |   |   |-- alias.pyc
+|   |   |   |   |   |-- bdist_egg.py
+|   |   |   |   |   |-- bdist_egg.pyc
+|   |   |   |   |   |-- bdist_rpm.py
+|   |   |   |   |   |-- bdist_rpm.pyc
+|   |   |   |   |   |-- bdist_wininst.py
+|   |   |   |   |   |-- bdist_wininst.pyc
+|   |   |   |   |   |-- build_ext.py
+|   |   |   |   |   |-- build_ext.pyc
+|   |   |   |   |   |-- build_py.py
+|   |   |   |   |   |-- build_py.pyc
+|   |   |   |   |   |-- develop.py
+|   |   |   |   |   |-- develop.pyc
+|   |   |   |   |   |-- easy_install.py
+|   |   |   |   |   |-- easy_install.pyc
+|   |   |   |   |   |-- egg_info.py
+|   |   |   |   |   |-- egg_info.pyc
+|   |   |   |   |   |-- __init__.py
+|   |   |   |   |   |-- __init__.pyc
+|   |   |   |   |   |-- install_egg_info.py
+|   |   |   |   |   |-- install_egg_info.pyc
+|   |   |   |   |   |-- install_lib.py
+|   |   |   |   |   |-- install_lib.pyc
+|   |   |   |   |   |-- install.py
+|   |   |   |   |   |-- install.pyc
+|   |   |   |   |   |-- install_scripts.py
+|   |   |   |   |   |-- install_scripts.pyc
+|   |   |   |   |   |-- register.py
+|   |   |   |   |   |-- register.pyc
+|   |   |   |   |   |-- rotate.py
+|   |   |   |   |   |-- rotate.pyc
+|   |   |   |   |   |-- saveopts.py
+|   |   |   |   |   |-- saveopts.pyc
+|   |   |   |   |   |-- sdist.py
+|   |   |   |   |   |-- sdist.pyc
+|   |   |   |   |   |-- setopt.py
+|   |   |   |   |   |-- setopt.pyc
+|   |   |   |   |   |-- test.py
+|   |   |   |   |   |-- test.pyc
+|   |   |   |   |   |-- upload_docs.py
+|   |   |   |   |   |-- upload_docs.pyc
+|   |   |   |   |   |-- upload.py
+|   |   |   |   |   `-- upload.pyc
+|   |   |   |   |-- depends.py
+|   |   |   |   |-- depends.pyc
+|   |   |   |   |-- dist.py
+|   |   |   |   |-- dist.pyc
+|   |   |   |   |-- extension.py
+|   |   |   |   |-- extension.pyc
+|   |   |   |   |-- gui.exe
+|   |   |   |   |-- __init__.py
+|   |   |   |   |-- __init__.pyc
+|   |   |   |   |-- package_index.py
+|   |   |   |   |-- package_index.pyc
+|   |   |   |   |-- sandbox.py
+|   |   |   |   |-- sandbox.pyc
+|   |   |   |   `-- tests
+|   |   |   |       |-- doctest.py
+|   |   |   |       |-- doctest.pyc
+|   |   |   |       |-- __init__.py
+|   |   |   |       |-- __init__.pyc
+|   |   |   |       |-- server.py
+|   |   |   |       |-- server.pyc
+|   |   |   |       |-- test_build_ext.py
+|   |   |   |       |-- test_build_ext.pyc
+|   |   |   |       |-- test_develop.py
+|   |   |   |       |-- test_develop.pyc
+|   |   |   |       |-- test_easy_install.py
+|   |   |   |       |-- test_easy_install.pyc
+|   |   |   |       |-- test_packageindex.py
+|   |   |   |       |-- test_packageindex.pyc
+|   |   |   |       |-- test_resources.py
+|   |   |   |       |-- test_resources.pyc
+|   |   |   |       |-- test_sandbox.py
+|   |   |   |       |-- test_sandbox.pyc
+|   |   |   |       |-- test_upload_docs.py
+|   |   |   |       `-- test_upload_docs.pyc
+|   |   |   |-- site.py
+|   |   |   `-- site.pyc
+|   |   |-- easy-install.pth
+|   |   |-- setuptools-0.6c11-py2.6.egg-info
+|   |   `-- setuptools.pth
+|   |-- site.py
+|   |-- site.pyc
+|   |-- sre_compile.py -> /usr/lib/python2.6/sre_compile.py
+|   |-- sre_compile.pyc -> /usr/lib/python2.6/sre_compile.pyc
+|   |-- sre_constants.py -> /usr/lib/python2.6/sre_constants.py
+|   |-- sre_constants.pyc -> /usr/lib/python2.6/sre_constants.pyc
+|   |-- sre_parse.py -> /usr/lib/python2.6/sre_parse.py
+|   |-- sre_parse.pyc -> /usr/lib/python2.6/sre_parse.pyc
+|   |-- sre.py -> /usr/lib/python2.6/sre.py
+|   |-- sre.pyc -> /usr/lib/python2.6/sre.pyc
+|   |-- stat.py -> /usr/lib/python2.6/stat.py
+|   |-- stat.pyc -> /usr/lib/python2.6/stat.pyc
+|   |-- types.py -> /usr/lib/python2.6/types.py
+|   |-- types.pyc -> /usr/lib/python2.6/types.pyc
+|   |-- UserDict.py -> /usr/lib/python2.6/UserDict.py
+|   |-- UserDict.pyc -> /usr/lib/python2.6/UserDict.pyc
+|   |-- warnings.py -> /usr/lib/python2.6/warnings.py
+|   `-- warnings.pyc -> /usr/lib/python2.6/warnings.pyc
+`-- tasks
+
+12 directories, 141 files
+
+
+
+sfr94@sfr94-desktop:~/Bureau/dbz$ ./bin/easy_install -U Sphinx
+install_dir /home/sfr94/Bureau/dbz/lib/python2.6/site-packages/
+Searching for Sphinx
+Reading http://pypi.python.org/simple/Sphinx/
+Reading http://sphinx.pocoo.org/
+Best match: Sphinx 1.0.7
+Downloading http://pypi.python.org/packages/2.6/S/Sphinx/Sphinx-1.0.7-py2.6.egg#md5=a547658740040dd87ef71fbf723e7962
+Processing Sphinx-1.0.7-py2.6.egg
+creating /home/sfr94/Bureau/dbz/lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg
+Extracting Sphinx-1.0.7-py2.6.egg to /home/sfr94/Bureau/dbz/lib/python2.6/site-packages
+Adding Sphinx 1.0.7 to easy-install.pth file
+Installing sphinx-build script to /home/sfr94/Bureau/dbz/bin
+Installing sphinx-quickstart script to /home/sfr94/Bureau/dbz/bin
+Installing sphinx-autogen script to /home/sfr94/Bureau/dbz/bin
+
+Installed /home/sfr94/Bureau/dbz/lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg
+Processing dependencies for Sphinx
+Finished processing dependencies for Sphinx
+sfr94@sfr94-desktop:~/Bureau/dbz$ ls bin
+activate  activate_this.py  easy_install  easy_install-2.6  python  sphinx-autogen  sphinx-build  sphinx-quickstart
+
+
+$ git checkout master
+$ git merge sphinx
+
+ .../setuptools/tests/test_build_ext.py             |   20 +
+ .../setuptools/tests/test_build_ext.pyc            |  Bin 0 -> 1290 bytes
+ .../setuptools/tests/test_develop.py               |   82 +
+ .../setuptools/tests/test_develop.pyc              |  Bin 0 -> 3440 bytes
+ .../setuptools/tests/test_easy_install.py          |  243 ++
+ .../setuptools/tests/test_easy_install.pyc         |  Bin 0 -> 10821 bytes
+ .../setuptools/tests/test_packageindex.py          |  112 +
+ .../setuptools/tests/test_packageindex.pyc         |  Bin 0 -> 4280 bytes
+ .../setuptools/tests/test_resources.py             |  565 ++++
+ .../setuptools/tests/test_resources.pyc            |  Bin 0 -> 26083 bytes
+ .../setuptools/tests/test_sandbox.py               |   66 +
+ .../setuptools/tests/test_sandbox.pyc              |  Bin 0 -> 3488 bytes
+ .../setuptools/tests/test_upload_docs.py           |   65 +
+ .../setuptools/tests/test_upload_docs.pyc          |  Bin 0 -> 2723 bytes
+ .../distribute-0.6.14-py2.6.egg/site.py            |   82 +
+ .../distribute-0.6.14-py2.6.egg/site.pyc           |  Bin 0 -> 1863 bytes
+ lib/python2.6/site-packages/easy-install.pth       |    5 +
+ .../site-packages/setuptools-0.6c11-py2.6.egg-info |    9 +
+ lib/python2.6/site-packages/setuptools.pth         |    1 +
+ lib/python2.6/site.py                              |  694 +++++
+ lib/python2.6/site.pyc                             |  Bin 0 -> 23392 bytes
+ lib/python2.6/sre.py                               |    1 +
+ lib/python2.6/sre.pyc                              |    1 +
+ lib/python2.6/sre_compile.py                       |    1 +
+ lib/python2.6/sre_compile.pyc                      |    1 +
+ lib/python2.6/sre_constants.py                     |    1 +
+ lib/python2.6/sre_constants.pyc                    |    1 +
+ lib/python2.6/sre_parse.py                         |    1 +
+ lib/python2.6/sre_parse.pyc                        |    1 +
+ lib/python2.6/stat.py                              |    1 +
+ lib/python2.6/stat.pyc                             |    1 +
+ lib/python2.6/types.py                             |    1 +
+ lib/python2.6/types.pyc                            |    1 +
+ lib/python2.6/warnings.py                          |    1 +
+ lib/python2.6/warnings.pyc                         |    1 +
+ 474 files changed, 66779 insertions(+), 0 deletions(-)
+ create mode 100644 bin/activate
+ create mode 100644 bin/activate_this.py
+ create mode 100755 bin/easy_install
+ create mode 100755 bin/easy_install-2.6
+ create mode 100755 bin/python
+ create mode 100755 bin/sphinx-autogen
+ create mode 100755 bin/sphinx-build
+ create mode 100755 bin/sphinx-quickstart
+ create mode 120000 include/python2.6
+ create mode 120000 lib/python2.6/UserDict.py
+ create mode 120000 lib/python2.6/UserDict.pyc
+ create mode 120000 lib/python2.6/_abcoll.py
+ create mode 120000 lib/python2.6/_abcoll.pyc
+ create mode 120000 lib/python2.6/abc.py
+ create mode 120000 lib/python2.6/abc.pyc
+ create mode 120000 lib/python2.6/codecs.py
+ create mode 120000 lib/python2.6/codecs.pyc
+ create mode 120000 lib/python2.6/config
+ create mode 120000 lib/python2.6/copy_reg.py
+ create mode 120000 lib/python2.6/copy_reg.pyc
+ create mode 100644 lib/python2.6/distutils/__init__.py
+ create mode 100644 lib/python2.6/distutils/__init__.pyc
+ create mode 100644 lib/python2.6/distutils/distutils.cfg
+ create mode 120000 lib/python2.6/encodings
+ create mode 120000 lib/python2.6/fnmatch.py
+ create mode 120000 lib/python2.6/fnmatch.pyc
+ create mode 120000 lib/python2.6/genericpath.py
+ create mode 120000 lib/python2.6/genericpath.pyc
+ create mode 120000 lib/python2.6/lib-dynload
+ create mode 120000 lib/python2.6/linecache.py
+ create mode 120000 lib/python2.6/linecache.pyc
+ create mode 120000 lib/python2.6/locale.py
+ create mode 120000 lib/python2.6/locale.pyc
+ create mode 120000 lib/python2.6/ntpath.py
+ create mode 120000 lib/python2.6/ntpath.pyc
+ create mode 100644 lib/python2.6/orig-prefix.txt
+ create mode 120000 lib/python2.6/os.py
+ create mode 120000 lib/python2.6/os.pyc
+ create mode 120000 lib/python2.6/posixpath.py
+ create mode 120000 lib/python2.6/posixpath.pyc
+ create mode 120000 lib/python2.6/re.py
+ create mode 120000 lib/python2.6/re.pyc
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/EGG-INFO/PKG-INFO
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/EGG-INFO/SOURCES.txt
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/EGG-INFO/dependency_links.txt
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/EGG-INFO/entry_points.txt
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/EGG-INFO/not-zip-safe
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/EGG-INFO/requires.txt
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/EGG-INFO/top_level.txt
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/__init__.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/__init__.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/addnodes.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/addnodes.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/application.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/application.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/__init__.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/__init__.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/changes.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/changes.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/devhelp.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/devhelp.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/epub.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/epub.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/html.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/html.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/htmlhelp.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/htmlhelp.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/latex.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/latex.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/linkcheck.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/linkcheck.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/manpage.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/manpage.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/qthelp.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/qthelp.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/text.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/builders/text.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/cmdline.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/cmdline.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/config.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/config.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/directives/__init__.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/directives/__init__.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/directives/code.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/directives/code.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/directives/other.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/directives/other.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/domains/__init__.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/domains/__init__.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/domains/c.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/domains/c.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/domains/cpp.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/domains/cpp.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/domains/javascript.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/domains/javascript.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/domains/python.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/domains/python.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/domains/rst.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/domains/rst.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/domains/std.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/domains/std.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/environment.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/environment.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/errors.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/errors.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/__init__.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/__init__.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/autodoc.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/autodoc.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/autosummary/__init__.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/autosummary/__init__.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/autosummary/generate.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/autosummary/generate.pyc
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/autosummary/templates/autosummary/base.rst
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/autosummary/templates/autosummary/class.rst
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/autosummary/templates/autosummary/module.rst
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/coverage.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/coverage.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/doctest.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/doctest.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/extlinks.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/extlinks.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/graphviz.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/graphviz.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/ifconfig.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/ifconfig.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/inheritance_diagram.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/inheritance_diagram.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/intersphinx.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/intersphinx.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/jsmath.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/jsmath.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/mathbase.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/mathbase.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/oldcmarkup.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/oldcmarkup.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/pngmath.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/pngmath.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/refcounting.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/refcounting.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/todo.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/todo.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/viewcode.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/ext/viewcode.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/highlighting.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/highlighting.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/jinja2glue.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/jinja2glue.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/__init__.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/__init__.pyc
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/bn/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/bn/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/bn/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/ca/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/ca/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/ca/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/cs/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/cs/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/cs/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/da/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/da/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/da/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/de/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/de/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/de/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/es/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/es/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/es/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/fi/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/fi/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/fi/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/fr/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/fr/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/fr/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/hr/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/hr/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/hr/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/it/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/it/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/it/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/ja/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/ja/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/ja/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/lt/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/lt/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/lt/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/nl/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/nl/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/nl/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/pl/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/pl/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/pl/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/pt_BR/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/pt_BR/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/pt_BR/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/ru/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/ru/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/ru/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/sl/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/sl/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/sl/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/sphinx.pot
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/tr/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/tr/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/tr/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/uk_UA/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/uk_UA/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/uk_UA/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/zh_CN/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/zh_CN/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/zh_CN/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/zh_TW/LC_MESSAGES/sphinx.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/zh_TW/LC_MESSAGES/sphinx.mo
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/locale/zh_TW/LC_MESSAGES/sphinx.po
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/Grammar.txt
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/__init__.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/__init__.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/nodes.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/nodes.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/pgen2/__init__.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/pgen2/__init__.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/pgen2/driver.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/pgen2/driver.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/pgen2/grammar.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/pgen2/grammar.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/pgen2/literals.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/pgen2/literals.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/pgen2/parse.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/pgen2/parse.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/pgen2/pgen.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/pgen2/pgen.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/pgen2/token.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/pgen2/token.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/pgen2/tokenize.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/pycode/pgen2/tokenize.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/quickstart.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/quickstart.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/roles.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/roles.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/search.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/search.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/setup_command.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/setup_command.pyc
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/texinputs/Makefile
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/texinputs/fncychap.sty
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/texinputs/python.ist
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/texinputs/sphinx.sty
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/texinputs/sphinxhowto.cls
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/texinputs/sphinxmanual.cls
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/texinputs/tabulary.sty
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/agogo/layout.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/agogo/static/agogo.css_t
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/agogo/static/bgfooter.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/agogo/static/bgtop.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/agogo/theme.conf
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/changes/frameset.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/changes/rstsource.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/changes/versionchanges.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/defindex.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/domainindex.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/genindex-single.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/genindex-split.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/genindex.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/globaltoc.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/layout.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/localtoc.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/opensearch.xml
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/page.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/relations.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/search.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/searchbox.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/sourcelink.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/static/basic.css
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/static/doctools.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/static/file.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/static/jquery.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/static/minus.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/static/plus.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/static/searchtools.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/static/underscore.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/basic/theme.conf
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/default/layout.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/default/static/default.css_t
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/default/static/sidebar.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/default/theme.conf
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/epub/layout.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/epub/static/epub.css
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/epub/theme.conf
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/haiku/layout.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/haiku/static/alert_info_32.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/haiku/static/alert_warning_32.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/haiku/static/bg-page.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/haiku/static/bullet_orange.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/haiku/static/haiku.css_t
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/haiku/theme.conf
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/nature/static/nature.css_t
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/nature/theme.conf
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/scrolls/artwork/logo.svg
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/scrolls/layout.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/scrolls/static/darkmetal.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/scrolls/static/headerbg.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/scrolls/static/logo.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/scrolls/static/metal.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/scrolls/static/navigation.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/scrolls/static/print.css
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/scrolls/static/scrolls.css_t
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/scrolls/static/theme_extras.js
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/scrolls/static/watermark.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/scrolls/static/watermark_blur.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/scrolls/theme.conf
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/sphinxdoc/layout.html
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/sphinxdoc/static/contents.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/sphinxdoc/static/navigation.png
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/sphinxdoc/static/sphinxdoc.css
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/sphinxdoc/theme.conf
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/traditional/static/traditional.css
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/themes/traditional/theme.conf
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/theming.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/theming.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/__init__.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/__init__.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/compat.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/compat.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/console.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/console.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/docfields.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/docfields.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/docstrings.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/docstrings.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/inspect.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/inspect.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/jsdump.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/jsdump.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/jsonimpl.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/jsonimpl.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/matching.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/matching.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/nodes.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/nodes.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/osutil.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/osutil.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/png.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/png.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/pycompat.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/pycompat.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/smartypants.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/smartypants.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/stemmer.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/stemmer.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/tags.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/tags.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/texescape.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/util/texescape.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/writers/__init__.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/writers/__init__.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/writers/html.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/writers/html.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/writers/latex.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/writers/latex.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/writers/manpage.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/writers/manpage.pyc
+ create mode 100755 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/writers/text.py
+ create mode 100644 lib/python2.6/site-packages/Sphinx-1.0.7-py2.6.egg/sphinx/writers/text.pyc
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/EGG-INFO/PKG-INFO
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/EGG-INFO/SOURCES.txt
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/EGG-INFO/dependency_links.txt
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/EGG-INFO/entry_points.txt
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/EGG-INFO/top_level.txt
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/EGG-INFO/zip-safe
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/easy_install.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/easy_install.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/pkg_resources.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/pkg_resources.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/__init__.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/__init__.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/archive_util.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/archive_util.pyc
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/cli.exe
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/__init__.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/__init__.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/alias.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/alias.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/bdist_egg.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/bdist_egg.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/bdist_rpm.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/bdist_rpm.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/bdist_wininst.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/bdist_wininst.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/build_ext.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/build_ext.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/build_py.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/build_py.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/develop.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/develop.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/easy_install.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/easy_install.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/egg_info.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/egg_info.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/install.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/install.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/install_egg_info.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/install_egg_info.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/install_lib.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/install_lib.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/install_scripts.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/install_scripts.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/register.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/register.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/rotate.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/rotate.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/saveopts.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/saveopts.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/sdist.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/sdist.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/setopt.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/setopt.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/test.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/test.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/upload.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/upload.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/upload_docs.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/command/upload_docs.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/depends.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/depends.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/dist.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/dist.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/extension.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/extension.pyc
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/gui.exe
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/package_index.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/package_index.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/sandbox.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/sandbox.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/__init__.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/__init__.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/doctest.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/doctest.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/server.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/server.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/test_build_ext.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/test_build_ext.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/test_develop.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/test_develop.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/test_easy_install.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/test_easy_install.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/test_packageindex.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/test_packageindex.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/test_resources.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/test_resources.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/test_sandbox.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/test_sandbox.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/test_upload_docs.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/setuptools/tests/test_upload_docs.pyc
+ create mode 100755 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/site.py
+ create mode 100644 lib/python2.6/site-packages/distribute-0.6.14-py2.6.egg/site.pyc
+ create mode 100644 lib/python2.6/site-packages/easy-install.pth
+ create mode 100644 lib/python2.6/site-packages/setuptools-0.6c11-py2.6.egg-info
+ create mode 100644 lib/python2.6/site-packages/setuptools.pth
+ create mode 100644 lib/python2.6/site.py
+ create mode 100644 lib/python2.6/site.pyc
+ create mode 120000 lib/python2.6/sre.py
+ create mode 120000 lib/python2.6/sre.pyc
+ create mode 120000 lib/python2.6/sre_compile.py
+ create mode 120000 lib/python2.6/sre_compile.pyc
+ create mode 120000 lib/python2.6/sre_constants.py
+ create mode 120000 lib/python2.6/sre_constants.pyc
+ create mode 120000 lib/python2.6/sre_parse.py
+ create mode 120000 lib/python2.6/sre_parse.pyc
+ create mode 120000 lib/python2.6/stat.py
+ create mode 120000 lib/python2.6/stat.pyc
+ create mode 120000 lib/python2.6/types.py
+ create mode 120000 lib/python2.6/types.pyc
+ create mode 120000 lib/python2.6/warnings.py
+ create mode 120000 lib/python2.6/warnings.pyc
+
+
+sfr94@sfr94-desktop:~/Bureau/dbz$ ./bin/sphinx-quickstart 
+Welcome to the Sphinx 1.0.7 quickstart utility.
+
+Please enter values for the following settings (just press Enter to
+accept a default value, if one is given in brackets).
+
+Enter the root path for documentation.
+> Root path for the documentation [.]: DBZ
+
+You have two options for placing the build directory for Sphinx output.
+Either, you use a directory "_build" within the root path, or you separate
+"source" and "build" directories within the root path.
+> Separate source and build directories (y/N) [n]: 
+
+Inside the root directory, two more directories will be created; "_templates"
+for custom HTML templates and "_static" for custom stylesheets and other static
+files. You can enter another prefix (such as ".") to replace the underscore.
+> Name prefix for templates and static dir [_]: 
+
+The project name will occur in several places in the built documentation.
+> Project name: DBZ
+> Author name(s): 
+* Please enter some text.
+> Author name(s): Jean-Loup HOAC, Alexis LETESSIER
+
+Sphinx has the notion of a "version" and a "release" for the
+software. Each version can have multiple releases. For example, for
+Python the version is something like 2.5 or 3.0, while the release is
+something like 2.5.1 or 3.0a1.  If you don't need this dual structure,
+just set both to the same value.
+> Project version: 0.1
+> Project release [0.1]: 
+
+The file name suffix for source files. Commonly, this is either ".txt"
+or ".rst".  Only files with this suffix are considered documents.
+> Source file suffix [.rst]: .rest
+
+One document is special in that it is considered the top node of the
+"contents tree", that is, it is the root of the hierarchical structure
+of the documents. Normally, this is "index", but if your "index"
+document is a custom template, you can also set this to another filename.
+> Name of your master document (without suffix) [index]: 
+
+Sphinx can also add configuration for epub output:
+> Do you want to use the epub builder (y/N) [n]: 
+
+Please indicate if you want to use one of the following Sphinx extensions:
+> autodoc: automatically insert docstrings from modules (y/N) [n]: 
+> doctest: automatically test code snippets in doctest blocks (y/N) [n]: 
+> intersphinx: link between Sphinx documentation of different projects (y/N) [n]: y
+> todo: write "todo" entries that can be shown or hidden on build (y/N) [n]: y
+> coverage: checks for documentation coverage (y/N) [n]: 
+> pngmath: include math, rendered as PNG images (y/N) [n]: 
+> jsmath: include math, rendered in the browser by JSMath (y/N) [n]: 
+> ifconfig: conditional inclusion of content based on config values (y/N) [n]: 
+> viewcode: include links to the source code of documented Python objects (y/N) [n]: 
+
+A Makefile and a Windows command file can be generated for you so that you
+only have to run e.g. `make html' instead of invoking sphinx-build
+directly.
+> Create Makefile? (Y/n) [y]: 
+> Create Windows command file? (Y/n) [y]: n
+
+Finished: An initial directory structure has been created.
+
+You should now populate your master file DBZ/index.rest and create other documentation
+source files. Use the Makefile to build the docs, like so:
+   make builder
+where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
+
+
+
+
+sfr94@sfr94-desktop:~/Bureau/dbz$ git remote 
+origin
+sfr94@sfr94-desktop:~/Bureau/dbz$ git log
+commit 11d7f3ff60c6afb54a64e37ccb731cd88773647d
+Author: senzo <h.jloup@gmail.com>
+Date:   Wed Feb 9 11:52:29 2011 +0100
+
+    initialisation virtualenv et installation Sphinx
+
+commit 354a817188d5058be32b88d6b70d32a1942953fe
+Author: senzo <h.jloup@gmail.com>
+Date:   Mon Feb 7 18:00:33 2011 +0100
+
+    initialisation
+sfr94@sfr94-desktop:~/Bureau/dbz$ git push 
+fatal: remote error: 
+  You can't push to git://github.com/senzo/dbz.git
+  Use git@github.com:senzo/dbz.git
+sfr94@sfr94-desktop:~/Bureau/dbz$ git push git@github.com:senzo/dbz.git
+Counting objects: 565, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (486/486), done.
+Writing objects: 100% (563/563), 2.27 MiB | 974 KiB/s, done.
+Total 563 (delta 47), reused 0 (delta 0)
+To git@github.com:senzo/dbz.git
+   354a817..11d7f3f  master -> master
+
+
+
