@@ -1,8 +1,10 @@
 Initialisation Sphinx
 
-sfr94@sfr94-desktop:~/Bureau/dbz$ git branch
-  master
-* sphinx
+::
+
+  sfr94@sfr94-desktop:~/Bureau/dbz$ git branch
+    master
+  * sphinx
 
 sfr94@sfr94-desktop:~/Bureau/dbz$ virtualenv --setuptools .
 New python executable in ./bin/python

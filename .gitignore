@@ -7,3 +7,4 @@ tmp/**/*
 doc/
 *.swp
 *~
+DBZ/_build
