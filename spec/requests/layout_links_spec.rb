@@ -21,4 +21,6 @@ describe "LayoutLinks" do
     get '/about'
     response.should have_selector('title', :content => "About")
   end
+
+
 end
