@@ -26,6 +26,11 @@ describe User do
     long_name_user.should_not be_valid
   end
 
+  it "should reject names that are too short" do
+    long_name = "a" * 3
+    long_name_user = User.new(@attr.merge(:name => long_name))
+    long_name_user.should_not be_valid
+  end
 
 #regex
   it "should accept valid email addresses" do
