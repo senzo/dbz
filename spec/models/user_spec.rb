@@ -27,9 +27,9 @@ describe User do
   end
 
   it "should reject names that are too short" do
-    long_name = "a" * 3
-    long_name_user = User.new(@attr.merge(:name => long_name))
-    long_name_user.should_not be_valid
+    short_name = "a" * 2
+    short_name_user = User.new(@attr.merge(:name => short_name))
+    short_name_user.should_not be_valid
   end
 
 #regex
