@@ -5,12 +5,12 @@ describe UsersController do
 
   describe "GET 'new'" do
     it "should be successful" do
-      get 'new'
+      get :new
       response.should be_success
     end
 
     it "should have the right title" do
-      get 'new'
+      get :new
       response.should have_selector("title", :content => "Sign up")
     end
   end
@@ -96,7 +96,7 @@ describe UsersController do
       it "should have a welcome message" do
         post :create, :user => @attr
         flash[:success].should =~ /welcome to the sample app/i
-
+      end
     end
   end
 end
