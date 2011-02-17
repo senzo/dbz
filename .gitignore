@@ -6,5 +6,6 @@ tmp/**/*
 /tmp/
 doc/
 *.swp
+*.pyc
 *~
 DBZ/_build
