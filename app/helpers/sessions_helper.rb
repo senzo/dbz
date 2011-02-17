@@ -31,6 +31,4 @@ module SessionsHelper
     def remember_token
       cookies.signed[:remember_token] || [nil, nil]
     end
-
 end
-

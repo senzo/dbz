@@ -14,4 +14,3 @@ group :test do
   gem 'webrat', '0.7.3'
   gem 'factory_girl_rails', '1.0'
 end
-

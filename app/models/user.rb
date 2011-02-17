@@ -31,7 +31,6 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
 
   def has_password?(submitted_password)
-    # Compare encrypted_password with the encrypted version of submitted_password.
     encrypted_password == encrypt(submitted_password)
   end
 
@@ -53,7 +52,6 @@ class User < ActiveRecord::Base
     return user if user.salt == cookie_salt
   end
 
-
   private
 
   def encrypt_password
@@ -72,5 +70,4 @@ class User < ActiveRecord::Base
   def secure_hash(string)
     Digest::SHA2.hexdigest(string)
   end
-
 end
