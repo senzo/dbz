@@ -22,17 +22,8 @@ module SessionsHelper
     @current_user ||= user_from_remember_token
   end
 
-  def deny_access
-    redirect_to signin_path, :notice => "Please sign in to access this page."
-  end
-
   def current_user?(user)
     user == current_user
-  end
-
-# <<<<<<< HEAD
-  def deny_access
-    redirect_to signin_path, :notice => "Please sign in to access this page."
   end
 
   def deny_access
@@ -45,8 +36,6 @@ module SessionsHelper
     clear_return_to
   end
 
-# =======
-# >>>>>>> master
   private
 
     def user_from_remember_token
@@ -64,5 +53,4 @@ module SessionsHelper
     def clear_return_to
       session[:return_to] = nil
     end
-
 end

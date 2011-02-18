@@ -4,47 +4,36 @@
 }
 body {
   background: #fff;
+  font: 13.34px helvetica,arial,freesans,clean,sans-serif; 
+  font-size: 12px;
 }
-header {
-  padding-top: 20px;
-}
-header img {
-  padding: 1em;
-  background: #fff;
-}
-
 section {
-  margin-top: 1em;
+  margin-top: 5px;
   font-size: 120%;
   padding: 20px;
-  background: #ffddcc;
+  padding-top: 30px;
 }
-
 section h1 {
-  font-size: 200%;
+  font-size: 20px;
 }
 
 /* Links */
 a {
-  color: #069;
+  color: #4183c4;
   text-decoration: none;
 }
-a:hover {
-  color: #069;
-  text-decoration: underline;
-}
-a:visited {
-  color: #069;
-}
-
-
 /* Navigation */
 
 nav {
   float: right;
-  background-color: white;
   padding: 0 0.7em;
   white-space: nowrap;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: -moz-linear-gradient(270deg, #FCFCFC, #ECECEC) repeat scroll 0 0 transparent;
+  border-color: #E9E9E9 #E9E9E9 #F5F5F5;
+  border-style: solid;
+  border-width: 1px;
 }
 nav ul {
   margin: 0;
@@ -59,14 +48,8 @@ nav ul li a {
   padding: 0 5px;
   font-weight: bold;
   color: #069;
+  text-shadow: 1px 1px 0 #FFFFFF;
 }
-nav ul li a:visited {
-  color: #09c;
-}
-nav ul li a:hover {
-  text-decoration: underline;
-}
-
 
 /* Sign up button */
 
@@ -83,11 +66,9 @@ a.signup_button {
   padding: 20px;
 }
 
-
 /* footer */
-
 footer {
-  text-align: right;
+  text-align: center;
   margin-top: 10px;
   width: 710px;
   margin-left: auto;
@@ -98,10 +79,7 @@ footer nav {
   float: none;
 }
 
-
-
 /* User show page */
-
 table.profile {
   width: 100%;
   margin-bottom: 0;
@@ -116,14 +94,18 @@ td.sidebar {
   width: 30%;
   padding: 1em;
   vertical-align: top;
-  background: #ffc;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -moz-box-shadow: 0 1px 0 #ECECEC;
+  background: -moz-linear-gradient(90deg, #ECECEC, #F4F4F4) repeat scroll 0 0 transparent;
+  border: 1px solid #D4D4D4;
+  color: #666666;
+  font-size: 15px;
 }
 
 .profile img.gravatar {
   border: 1px solid #999;
   margin-bottom: -15px;
 }
-
 
 /* Errors  page */
 .field_with_errors {
@@ -175,3 +157,10 @@ ul.users {
   list-style: none;
 }
 
+/* Round corners */
+
+.round {
+  -moz-border-radius:    5px;
+  -webkit-border-radius: 5px;
+  border-radius:         5px;
+}
