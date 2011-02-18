@@ -11,7 +11,6 @@ describe User do
     }
   end
 
-
   it "should create a new instance given valid attributes" do
     User.create!(@attr)
   end
@@ -69,8 +68,6 @@ describe User do
     user_with_duplicate_email = User.new(@attr)
     user_with_duplicate_email.should_not be_valid
   end
-
-
 
   describe "password validations" do
 
