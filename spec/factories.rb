@@ -7,3 +7,8 @@ Factory.define :user do |user|
   user.password_confirmation "foobar"
 end
 
+#pour will paginate?
+Factory.sequence :email do |n|
+  "person-#{n}@example.com"
+end
+
