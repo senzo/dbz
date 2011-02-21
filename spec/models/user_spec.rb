@@ -161,6 +161,4 @@ describe User do
       @user.should be_admin
     end
   end
-
 end
-
