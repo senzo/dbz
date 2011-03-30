@@ -4,11 +4,18 @@
       <h1 class="gravatar">
         <%= gravatar_for @user %>
         <%= @user.name %>
+      <% unless @user.system.empty? %>
+        <table class="system" summary="User system">
+          <%= render @system %>
+        </table>
+        <%= will_paginate @system %>
+      <% end %>
       </h1>
     </td>
     <td class="sidebar round">
       <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong>  <%= link_to user_path(@user), @user %>
+      <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
+      <strong>Systems</strong> <%= @user.system.count %><br />
     </td>
   </tr>
 </table>

@@ -161,4 +161,23 @@ describe User do
       @user.should be_admin
     end
   end
+
+
+  describe "associations du System" do
+
+    before(:each) do
+      @user = User.create(@attr)
+      @sys1 = Factory(:system, :user => @user, :created_at => 1.day.ago)
+      @sys2 = Factory(:system, :user => @user, :created_at => 1.hour.ago)
+
+    end
+
+    it "should have a System attribute" do
+      @user.should respond_to(:system)
+    end
+
+    it "should have the right microposts in the right order" do
+      @user.system.should == [@sys2, @sys1]
+    end
+  end
 end

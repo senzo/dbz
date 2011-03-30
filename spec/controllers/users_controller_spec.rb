@@ -45,8 +45,15 @@ describe UsersController do
       get :show, :id => @user
       response.should have_selector("h1>img", :class => "gravatar")
     end
-  end
 
+    it "should show the user's systems" do
+      sys1 = Factory(:system, :user => @user, :content => "Foo bar")
+      sys2 = Factory(:system, :user => @user, :content => "Baz quux")
+      get :show, :id => @user
+      response.should have_selector("span.content", :content => sys1.content)
+      response.should have_selector("span.content", :content => sys2.content)
+    end
+  end
 
   describe "POST 'create'" do
 
